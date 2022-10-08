@@ -65,19 +65,21 @@ static const Layout layouts[] = {
     { MODKEY|ControlMask,  KEY, toggleview, {.ui = 1 << TAG} }, \
 
 static const char *termcmd[]  = { "st", NULL };
-static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
+// static const char *roficmd[] = { "rofi", "-combi-modi", "window,drun", "-show", "combi", "-modi", "combi", NULL };
 
 static Key keys[] = {
     /* modifier            key              function          argument */
 	{ MODKEY|ShiftMask,    XK_Return,       spawn,            {.v = termcmd } },
-	{ MODKEY,              XK_p,            spawn,            {.v = roficmd} },
+	// { MODKEY,              XK_p,            spawn,            {.v = roficmd} },
     { MODKEY,              XK_equal,        togglesystray,    {0} },                     /* super +            |  切换 托盘栏显示状态 */
 
-    { MODKEY,              XK_Tab,          focusstack,       {.i = +1} },               /* super tab          |  本tag内切换聚焦窗口 */
-    { MODKEY,              XK_Up,           focusstack,       {.i = -1} },               /* super up           |  本tag内切换聚焦窗口 */
-    { MODKEY,              XK_Down,         focusstack,       {.i = +1} },               /* super down         |  本tag内切换聚焦窗口 */
+    // { MODKEY,              XK_Tab,          focusstack,       {.i = +1} },               /* super tab          |  本tag内切换聚焦窗口 */
+    // { MODKEY,              XK_Up,           focusstack,       {.i = -1} },               /* super up           |  本tag内切换聚焦窗口 */
+    // { MODKEY,              XK_Down,         focusstack,       {.i = +1} },               /* super down         |  本tag内切换聚焦窗口 */
     { MODKEY,              XK_k,            focusstack,       {.i = -1} },               /* super up           |  本tag内切换聚焦窗口 */
     { MODKEY,              XK_j,            focusstack,       {.i = +1} },               /* super down         |  本tag内切换聚焦窗口 */
+    // { MODKEY,              XK_h,            focusstack,       {.i = -1} },               /* super up           |  本tag内切换聚焦窗口 */
+    // { MODKEY,              XK_l,            focusstack,       {.i = +1} },               /* super down         |  本tag内切换聚焦窗口 */
 
     { MODKEY,              XK_Left,         viewtoleft,       {0} },                     /* super left         |  聚焦到左边的tag */
     { MODKEY,              XK_Right,        viewtoright,      {0} },                     /* super right        |  聚焦到右边的tag */
@@ -123,7 +125,9 @@ static Key keys[] = {
     { MODKEY|Mod1Mask,     XK_Left,         resizewin,        {.ui = H_REDUCE} },        /* super ctrl left    |  调整窗口 */
     { MODKEY|Mod1Mask,     XK_Right,        resizewin,        {.ui = H_EXPAND} },        /* super ctrl right   |  调整窗口 */
 
-    // /* spawn + SHCMD 执行对应命令 */
+    /* spawn + SHCMD 执行对应命令 */
+    { MODKEY,              XK_p,            spawn,       SHCMD("~/.config/rofi/scripts/rofi_mode.sh") },    /* super p |  rofi */
+    { MODKEY,              XK_Tab,          spawn,       SHCMD("~/.config/rofi/scripts/rofi_mode.sh window") },    /* super tab  |  切换聚焦窗口 */
     // { MODKEY|ShiftMask,    XK_q,            spawn,            SHCMD("~/scripts/app-starter.sh killw") },
     // { MODKEY,              XK_minus,        spawn,            SHCMD("~/scripts/app-starter.sh fst") },
     // { MODKEY,              XK_Return,       spawn,            SHCMD("~/scripts/app-starter.sh st") },
