@@ -37,3 +37,17 @@ exec dwm
 ## 展示
 
 ![show](./show.gif)
+
+
+## patches
+dwm-alpha 状态栏透明效果
+dwm-autostart 启动时可运行脚本
+dwm-awesomebar title可显示所有窗口，可点击focused到窗口
+dwm-fullscreen 可全屏
+dwm-hide_vacant_tags 只显示有窗口的tag
+dwm-nobord
+dwm-pertag 不同的tag可使用不同的窗口管理方法
+dwm-r1522-viewontag
+dwm-rotatestack
+dwm-scratchpad 可临时打开一个窗口
+dwm-vanitygaps 窗口之间加入空隙
